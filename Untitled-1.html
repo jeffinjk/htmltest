@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        
+        /* Updated CSS styles with YouTube-like colors */
+        .container {
+            background-color: #282828; /* Dark background color */
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #333;
+            color: white;
+        }
+
+        .tab {
+            background-color: #FF0000; /* Red tab color */
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            float: left;
+            border: 1px solid #FF0000; /* Red border color */
+        }
+
+        .tab:hover {
+            background-color: #FF3333; /* Lighter red on hover */
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+        .side-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 5px 0;
+            transition: background-color 0.3s; /* Smooth transition effect */
+        }
+
+        .side-links a:hover {
+            background-color: #333; /* Change background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tab" onclick="toggleTab(0)">dropdown</div>
+        <div class="tab" onclick="toggleTab(1)">dropup</div>
+
+        <div class="tab-content"> <!-- Remove the "active" class from both tab contents -->
+            <h2>Tab 1 Content</h2>
+            <p>This is the content for Tab 1.</p>
+        </div>
+
+        <div class="tab-content">
+            <h2>Tab 2 Content</h2>
+            <p>This is the content for Tab 2.</p>
+        </div>
+
+        <div class="dropdown">
+            <label for="selectOption">Select an option:</label>
+            <select id="selectOption">
+                <option value="option1">first</option>
+                <option value="option2">second</option>
+                <option value="option3">third</option>
+            </select>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Existing content -->
+
+        <div class="dropdown">
+            <!-- Existing dropdown content -->
+        </div>
+    </div>
+    
+    <!-- Add a side links container -->
+    <div class="side-links">
+        <a href="https://www.youtube.com/">Youtube</a>
+        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://www.linkedin.com/">Linkedin</a>
+    </div>
+
+    <script>
+        function toggleTab(tabIndex) {
+            const tabContent = document.querySelector('.tab-content:nth-child(' + (tabIndex + 1) + ')');
+            
+            // Toggle the active state of the clicked tab
+            tabContent.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

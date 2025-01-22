@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style the container with a black background and set its width */
+        .container {
+            background-color: black;
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #333;
+            color: white;
+        }
+
+        /* Style the tab buttons */
+        .tab {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            float: left;
+            border: 1px solid #222;
+        }
+
+        /* Style the tab content */
+        .tab-content {
+            display: none;
+            clear: both;
+            padding: 20px;
+        }
+
+        /* Style the active tab */
+        .active {
+            display: block;
+        }
+
+        /* Style the dropdown form */
+        .dropdown {
+            margin-top: 20px;
+        }
+
+        /* Style the form elements inside the dropdown */
+        .dropdown select, .dropdown label {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tab" onclick="showTab(0)">Tab 1</div>
+        <div class="tab" onclick="showTab(1)">Tab 2</div>
+
+        <div class="tab-content active">
+            <h2>Tab 1 Content</h2>
+            <p>This is the content for Tab 1.</p>
+        </div>
+
+        <div class="tab-content">
+            <h2>Tab 2 Content</h2>
+            <p>This is the content for Tab 2.</p>
+        </div>
+
+        <div class="dropdown">
+            <label for="selectOption">Select an option:</label>
+            <select id="selectOption">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabIndex) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach((tabContent, index) => {
+                if (index === tabIndex) {
+                    tabContent.classList.add('active');
+                } else {
+                    tabContent.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
